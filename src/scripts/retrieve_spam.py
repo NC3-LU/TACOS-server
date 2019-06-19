@@ -19,7 +19,6 @@ misp = PyMISP(misp_url, misp_key, misp_verifycert)
 result = misp.direct_call(relative_path, body)
 
 def retrieve_spam_from_misp():
-    print('OK....')
     for attribute in result['response']['Attribute']:
         try:
             x = phonenumbers.parse(attribute['value'], None)
