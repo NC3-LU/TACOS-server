@@ -49,7 +49,12 @@ def create_admin(login, password):
     with application.app_context():
         scripts.create_user(login, password, True)
 
-
+@manager.command
+def retrieve_spam_from_misp():
+    "Fetch spam phone numbers on MISP"
+    print("Fetching spam phone numbers on MISP...")
+    with application.app_context():
+        scripts.retrieve_spam_from_misp()
 
 
 if __name__ == '__main__':
