@@ -33,5 +33,5 @@ class SpamListAPI(Resource):
     def get(self):
         return {
             'nb_results': len(spams),
-            'spams': [marshal(spam, spam_fields) for spam in spams]
+            'objects': [marshal(spam, spam_fields) for spam in spams]
         }
