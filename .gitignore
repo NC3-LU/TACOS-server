@@ -1,0 +1,36 @@
+# use glob syntax
+syntax: glob
+
+*.elc
+*.pyc
+*~
+*.db
+*.mo
+
+# Emacs
+eproject.cfg
+*#
+
+# Temporary files (vim backups)
+*.swp
+
+# Log files:
+*.log
+
+# Vagrant:
+.vagrant/
+
+var/log/
+
+# Virtualenv
+venv
+build
+
+.python-version
+
+# js and node files
+package-lock.json
+node_modules
+src/web/static/npm_components
+
+src/instance/production.cfg
