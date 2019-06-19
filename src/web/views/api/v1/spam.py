@@ -6,8 +6,8 @@ from flask_restful import Resource, reqparse, fields, marshal
 from web.models import Spam
 
 spam_fields = {
-    'type': fields.String,
     'number': fields.String,
+    'category': fields.String,
     'created': fields.DateTime
 }
 

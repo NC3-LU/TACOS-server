@@ -34,6 +34,6 @@ def retrieve_spam_from_misp():
                                     attribute['category']))
 
         new_spam = Spam(number=attribute['value'],
-                            type=attribute['category'])
+                        category=attribute['category'])
         db.session.add(new_spam)
     db.session.commit()
