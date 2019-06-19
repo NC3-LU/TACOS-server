@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .report import Report
+from .spam import Spam
 
-__all__ = ['Report']
+__all__ = ['Spam']
 
 from sqlalchemy.engine import reflection
 from sqlalchemy import create_engine
@@ -23,7 +23,7 @@ def uml_graph(db):
     import sqlalchemy_schemadisplay as sasd
 
     graph = sasd.create_uml_graph(
-                        mappers(Report),
+                        mappers(Spam),
                         show_operations=False,
                         show_multiplicity_one=True
     )

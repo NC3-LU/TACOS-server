@@ -3,7 +3,7 @@ from datetime import datetime
 
 from bootstrap import db
 
-class Report(db.Model):
+class Spam(db.Model):
     """Represent a spam report.
     """
     id = db.Column(db.Integer, primary_key=True)
