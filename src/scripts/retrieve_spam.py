@@ -5,7 +5,8 @@ import phonenumbers
 from phonenumbers import geocoder
 from pymisp import PyMISP
 
-from bootstrap import application
+from bootstrap import application, db
+from web.models import Report
 
 misp_url = application.config.get('MISP_URL', '')
 misp_key = application.config.get('MISP_KEY', '')
@@ -31,3 +32,8 @@ def retrieve_spam_from_misp():
 
         print("{} - {} - {}".format(iternational_format, geo,
                                     attribute['category']))
+
+        new_report = Report(number=attribute['value'],
+                            type=attribute['category'])
+        db.session.add(new_report)
+    db.session.commit()

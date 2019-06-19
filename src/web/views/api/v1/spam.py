@@ -3,19 +3,12 @@
 
 from flask_restful import Resource, reqparse, fields, marshal
 
-spams = [
-    {
-        'id': 1,
-        'type': 'phone',
-        'number': '+352',
-        'timestamp': '11111'
-    }
-]
+from web.models import Report
 
-spam_fields = {
+report_fields = {
     'type': fields.String,
     'number': fields.String,
-    'timestamp': fields.Boolean
+    'created': fields.DateTime
 }
 
 class SpamListAPI(Resource):
@@ -31,7 +24,9 @@ class SpamListAPI(Resource):
         super(SpamListAPI, self).__init__()
 
     def get(self):
+        reports = Report.query
         return {
-            'nb_results': len(spams),
-            'objects': [marshal(spam, spam_fields) for spam in spams]
+            'nb_results': reports.count(),
+            'objects': [marshal(report, report_fields)
+                            for report in reports.all()]
         }
