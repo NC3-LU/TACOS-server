@@ -12,6 +12,7 @@ $ pipenv install
 $ pipenv shell
 $ python src/manager.py db_create
 $ python src/manager.py db_init
+$ python src/manager.py retrieve_spam_from_misp
 $ python src/runserver.py
 ```
 
