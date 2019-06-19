@@ -33,4 +33,5 @@ package-lock.json
 node_modules
 src/web/static/npm_components
 
+docs/_build
 src/instance/production.cfg
