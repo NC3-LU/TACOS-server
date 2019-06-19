@@ -1,0 +1,1 @@
+from scripts.retrieve_spam import retrieve_spam_from_misp
