@@ -23,18 +23,21 @@ class SpamListAPI(Resource):
     #decorators = [auth.login_required]
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        self.reqparse.add_argument('category', type=str, required=True,
-                                   help='No spam category provided',
-                                   location='json')
-        self.reqparse.add_argument('number', type=str, default="",
-                                   location='json')
+        self.reqparse.add_argument('category', type=str, default=None,
+                                   help='No spam category provided')
+        self.reqparse.add_argument('number', type=str, default=None)
         super(SpamListAPI, self).__init__()
 
     def get(self):
-        spams = Spam.query
+        args = self.reqparse.parse_args()
+        q = Spam.query
+        for attr, value in args.items():
+            if value:
+                q = q.filter(getattr(Spam, attr).ilike("%%%s%%" % value))
+
         return {
-            'nb_results': spams.count(),
-            'objects': [make_public_spam(spam) for spam in spams.all()]
+            'nb_results': q.count(),
+            'objects': [make_public_spam(spam) for spam in q.all()]
         }
 
 
