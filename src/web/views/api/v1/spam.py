@@ -8,6 +8,7 @@ from web.models import Spam
 spam_fields = {
     'number': fields.String,
     'category': fields.String,
+    'source': fields.String,
     'created': fields.DateTime
 }
 
