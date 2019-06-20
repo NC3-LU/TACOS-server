@@ -34,8 +34,7 @@ class SpamListAPI(Resource):
         spams = Spam.query
         return {
             'nb_results': spams.count(),
-            'objects': [marshal(spam, spam_fields)
-                            for spam in spams.all()]
+            'objects': [make_public_spam(spam) for spam in spams.all()]
         }
 
 
