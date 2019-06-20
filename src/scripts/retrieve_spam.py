@@ -34,6 +34,7 @@ def retrieve_spam_from_misp():
                                     attribute['category']))
 
         new_spam = Spam(number=attribute['value'],
-                        category=attribute['category'])
+                        category=attribute['category'],
+                        source=misp_url)
         db.session.add(new_spam)
     db.session.commit()
