@@ -23,9 +23,8 @@ class SpamListAPI(Resource):
     #decorators = [auth.login_required]
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        self.reqparse.add_argument('category', type=str, default=None,
-                                   help='No spam category provided')
-        self.reqparse.add_argument('number', type=str, default=None)
+        for field, field_type in spam_fields.items():
+            self.reqparse.add_argument(field, type=str, default=None)
         super(SpamListAPI, self).__init__()
 
     def get(self):
