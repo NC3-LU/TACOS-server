@@ -23,8 +23,8 @@ class SpamListAPI(Resource):
     #decorators = [auth.login_required]
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        self.reqparse.add_argument('type', type=str, required=True,
-                                   help='No spam type provided',
+        self.reqparse.add_argument('category', type=str, required=True,
+                                   help='No spam category provided',
                                    location='json')
         self.reqparse.add_argument('number', type=str, default="",
                                    location='json')
