@@ -23,6 +23,9 @@ def retrieve_spam_from_misp():
     result = misp.direct_call(relative_path, body)
 
     for attribute in result['response']['Attribute']:
+        if Spam.query.filter(Spam.uuid==attribute['uuid']).count():
+            continue
+
         try:
             x = phonenumbers.parse(attribute['value'], None)
         except phonenumbers.phonenumberutil.NumberParseException as e:
