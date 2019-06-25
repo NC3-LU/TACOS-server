@@ -2,6 +2,7 @@
 #! -*- coding: utf-8 -*-
 
 import phonenumbers
+from datetime import datetime
 from phonenumbers import geocoder
 from pymisp import PyMISP
 
@@ -41,6 +42,7 @@ def retrieve_spam_from_misp():
         new_spam = Spam(uuid=attribute['uuid'],
                         number=attribute['value'],
                         category=attribute['category'],
-                        source=misp_url)
+                        source=misp_url,
+                        date=datetime.fromtimestamp(int(attribute['timestamp'])))
         db.session.add(new_spam)
     db.session.commit()

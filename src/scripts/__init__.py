@@ -1,1 +1,2 @@
 from scripts.retrieve_spam import retrieve_spam_from_misp
+from scripts.add_spam import add_spam_manual
