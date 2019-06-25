@@ -13,6 +13,8 @@ misp_key = application.config.get('MISP_KEY', '')
 misp_verifycert = True
 relative_path = 'attributes/restSearch'
 body = {
+    #"org": "CIRCL",
+    "returnFormat": "json",
     "type": "phone-number"
 }
 
@@ -30,10 +32,11 @@ def retrieve_spam_from_misp():
                                     phonenumbers.PhoneNumberFormat.INTERNATIONAL)
         geo = geocoder.description_for_number(x, "en")
 
-        print("{} - {} - {}".format(iternational_format, geo,
-                                    attribute['category']))
+        #print("{} - {} - {}".format(iternational_format, geo,
+                                    #attribute['category']))
 
-        new_spam = Spam(number=attribute['value'],
+        new_spam = Spam(uuid=attribute['uuid'],
+                        number=attribute['value'],
                         category=attribute['category'],
                         source=misp_url)
         db.session.add(new_spam)
