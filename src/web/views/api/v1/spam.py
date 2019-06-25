@@ -7,23 +7,30 @@ from flask_restful import (Resource, reqparse, fields, marshal, abort)
 from web.models import Spam
 
 spam_fields = {
+    'uuid': fields.String,
     'number': fields.String,
     'category': fields.String,
     'source': fields.String,
     'created': fields.DateTime
 }
 
+spam_fields_light = {
+    'number': fields.String,
+    'category': fields.String,
+    'created': fields.DateTime
+}
+
 def make_public_spam(spam):
     """Convert the internal representation of a spam to
     the external representation that clients expected."""
-    return marshal(spam, spam_fields)
+    return marshal(spam, spam_fields_light)
 
 
 class SpamListAPI(Resource):
     #decorators = [auth.login_required]
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
-        for field, field_type in spam_fields.items():
+        for field, field_type in spam_fields_light.items():
             self.reqparse.add_argument(field, type=str, default=None)
         super(SpamListAPI, self).__init__()
 
