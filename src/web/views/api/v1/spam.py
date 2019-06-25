@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import jsonify
+from sqlalchemy import desc
 from flask_restful import (Resource, reqparse, fields, marshal, abort)
 
 from web.models import Spam
@@ -11,13 +12,13 @@ spam_fields = {
     'number': fields.String,
     'category': fields.String,
     'source': fields.String,
-    'created': fields.DateTime
+    'date': fields.DateTime
 }
 
 spam_fields_light = {
     'number': fields.String,
     'category': fields.String,
-    'created': fields.DateTime
+    'date': fields.DateTime
 }
 
 def make_public_spam(spam):
@@ -36,7 +37,7 @@ class SpamListAPI(Resource):
 
     def get(self):
         args = self.reqparse.parse_args()
-        q = Spam.query
+        q = Spam.query.order_by(desc(Spam.date))
         for attr, value in args.items():
             if value:
                 q = q.filter(getattr(Spam, attr).ilike("%%%s%%" % value))

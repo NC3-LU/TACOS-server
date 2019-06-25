@@ -12,4 +12,4 @@ class Spam(db.Model):
     number = db.Column(db.Text(), nullable=False)
     category = db.Column(db.Text(), nullable=False)
     source =  db.Column(db.Text(), nullable=False)
-    created = db.Column(db.DateTime(), default=datetime.utcnow())
+    date = db.Column(db.DateTime(), default=datetime.utcnow())
