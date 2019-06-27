@@ -1,0 +1,20 @@
+{
+    "name": "TACOS-server",
+    "description": "TACOS back-end services.",
+    "keywords": [
+        "CASES"
+    ],
+    "website": "https://github.com/CASES-LU/server",
+    "repository": "https://github.com/CASES-LU/server",
+    "addons": [
+        "heroku-postgresql:hobby-dev"
+    ],
+    "env": {
+        "APPLICATION_SETTINGS": {
+            "description": "Configuration file for Heroku",
+            "required": true,
+            "value": "heroku.cfg"
+        },
+    }
+}
+ 
