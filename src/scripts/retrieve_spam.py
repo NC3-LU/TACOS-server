@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #! -*- coding: utf-8 -*-
 
+import hashlib
 import phonenumbers
 from datetime import datetime
 from pymisp import PyMISP
@@ -23,6 +24,8 @@ def retrieve_spam_from_misp():
     misp = PyMISP(misp_url, misp_key, misp_verifycert)
     result = misp.direct_call(relative_path, body)
 
+    h = hashlib.sha512()
+
     for attribute in result['response']['Attribute']:
         if Spam.query.filter(Spam.uuid==attribute['uuid']).count():
             continue
@@ -38,8 +41,10 @@ def retrieve_spam_from_misp():
         #print("{} - {} - {}".format(iternational_format, geo,
                                     #attribute['category']))
 
+        h.update(attribute['value'].encode('utf-8'))
+
         new_spam = Spam(uuid=attribute['uuid'],
-                        number=attribute['value'],
+                        number_hash=h.hexdigest(),
                         category=attribute['category'],
                         source=misp_url,
                         date=datetime.fromtimestamp(int(attribute['timestamp'])))
