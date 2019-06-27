@@ -60,8 +60,8 @@ def retrieve_spam_from_misp():
 
 @manager.command
 def add_spam(number, category):
-    "Fetch spam phone numbers on MISP"
-    print("Fetching spam phone numbers on MISP...")
+    "Add a new number as a spam in the database."
+    print("Adding the number as a spam in the database....")
     with application.app_context():
         scripts.add_spam_manual(number, category)
 
