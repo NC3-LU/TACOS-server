@@ -65,5 +65,21 @@ def add_spam(number, category):
     with application.app_context():
         scripts.add_spam_manual(number, category)
 
+
+@manager.command
+def add_feed_set(title, description):
+    "Add a new feed set."
+    print("Adding a new feed set in the database....")
+    with application.app_context():
+        scripts.add_feed_set(title, description)
+
+
+@manager.command
+def add_feed(title, description, link, language, set_id):
+    "Add a new feed."
+    print("Adding a new set in the database....")
+    with application.app_context():
+        scripts.add_feed(title, description, link, language, set_id)
+
 if __name__ == '__main__':
     manager.run()
