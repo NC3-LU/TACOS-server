@@ -16,7 +16,7 @@ $ python src/manager.py retrieve_spam_from_misp
 $ python src/runserver.py
 ```
 
-On Heroku:
+Deploy on Heroku:
 
 ```bash
 $ heroku create --region eu tacos
