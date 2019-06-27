@@ -3,8 +3,8 @@
 
 import phonenumbers
 from datetime import datetime
-from phonenumbers import geocoder
 from pymisp import PyMISP
+#from phonenumbers import geocoder
 
 from bootstrap import application, db
 from web.models import Spam
@@ -32,10 +32,9 @@ def retrieve_spam_from_misp():
         except phonenumbers.phonenumberutil.NumberParseException as e:
             continue
 
-        iternational_format = phonenumbers.format_number(x,
-                                    phonenumbers.PhoneNumberFormat.INTERNATIONAL)
-        geo = geocoder.description_for_number(x, "en")
-
+        #iternational_format = phonenumbers.format_number(x,
+                                    #phonenumbers.PhoneNumberFormat.INTERNATIONAL)
+        #geo = geocoder.description_for_number(x, "en")
         #print("{} - {} - {}".format(iternational_format, geo,
                                     #attribute['category']))
 

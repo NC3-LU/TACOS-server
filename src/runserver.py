@@ -9,7 +9,6 @@ with application.app_context():
     from web import views
 
     # API v1
-    #application.register_blueprint(views.api.v1.api_bp, url_prefix='/api/v1')
     application.register_blueprint(views.api.v1.api_bp)
 
 if __name__ == '__main__':
