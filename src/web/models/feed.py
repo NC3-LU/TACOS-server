@@ -16,6 +16,9 @@ class Feed(db.Model):
     # foreign keys
     set_id = db.Column(db.Integer(), db.ForeignKey('feed_set.id'))
 
+    def output(self, key, obj):
+        return {'title': self.title}
+
 
 class FeedSet(db.Model):
     """Represents a set of feeds.
