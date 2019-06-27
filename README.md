@@ -16,6 +16,26 @@ $ python src/manager.py retrieve_spam_from_misp
 $ python src/runserver.py
 ```
 
+On Heroku:
+
+```bash
+$ heroku create --region eu tacos
+$ heroku addons:add heroku-postgresql:hobby-dev
+$ heroku config:set APPLICATION_SETTINGS='heroku.cfg'
+$ git push heroku master
+$ heroku run init
+$ heroku ps:scale web=1
+```
+
+Retrieving data from MISP:
+
+```bash
+$ heroku config:set MISP_URL=<MISP-instance-URL>
+$ heroku config:set MISP_KEY=<MISP-token>
+$ heroku run python src/manager.py retrieve_spam_from_misp
+```
+
+
 
 ## License
 
