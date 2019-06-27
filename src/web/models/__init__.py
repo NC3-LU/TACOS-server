@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from .spam import Spam
-
-__all__ = ['Spam']
+from .feed import Feed, FeedSet
 
 from sqlalchemy.engine import reflection
 from sqlalchemy import create_engine
@@ -23,7 +22,7 @@ def uml_graph(db):
     import sqlalchemy_schemadisplay as sasd
 
     graph = sasd.create_uml_graph(
-                        mappers(Spam),
+                        mappers(Spam, Feed, FeedSet),
                         show_operations=False,
                         show_multiplicity_one=True
     )

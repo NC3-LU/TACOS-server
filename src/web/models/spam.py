@@ -4,6 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 
 from bootstrap import db
 
+
 class Spam(db.Model):
     """Represent a spam report.
     """
