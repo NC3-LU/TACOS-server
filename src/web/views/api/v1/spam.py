@@ -10,13 +10,14 @@ from web.models import Spam
 spam_fields = {
     'uuid': fields.String,
     'number': fields.String,
+    'number_hash': fields.String,
     'category': fields.String,
     'source': fields.String,
     'date': fields.DateTime
 }
 
 spam_fields_light = {
-    'number': fields.String,
+    'number_hash': fields.String,
     'category': fields.String,
     'date': fields.DateTime
 }
