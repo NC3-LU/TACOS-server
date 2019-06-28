@@ -1,4 +1,4 @@
-# {APP_NAME}-server
+# tacos-server
 
 ## Presentation
 
@@ -16,10 +16,10 @@ $ python src/manager.py retrieve_spam_from_misp
 $ python src/runserver.py
 ```
 
-Deploy on Heroku:
+### Deploy on Heroku
 
 ```bash
-$ heroku create --region eu tacos
+$ heroku create --region eu tacos-backend
 $ heroku addons:add heroku-postgresql:hobby-dev
 $ heroku config:set APPLICATION_SETTINGS='heroku.cfg'
 $ git push heroku master
@@ -27,12 +27,24 @@ $ heroku run init
 $ heroku ps:scale web=1
 ```
 
-Retrieving data from MISP:
+#### Retrieving data from MISP
 
 ```bash
 $ heroku config:set MISP_URL=<MISP-instance-URL>
 $ heroku config:set MISP_KEY=<MISP-token>
 $ heroku run python src/manager.py retrieve_spam_from_misp
+```
+
+#### Adding some source of news
+
+```bash
+$ heroku run python src/manager.py add_feed_set 'CASES feed' 'Feeds proposed by CASES Luxembourg.'
+$ heroku run python src/manager.py add_feed CIRCL 'CIRCL News feed' https://www.circl.lu/rss.xml en 1
+$ heroku run python src/manager.py add_feed 'BEE Secure' 'Bee Secure feed' https://www.bee-secure.lu/de/rss/news de 1
+
+
+$ heroku run python src/manager.py add_feed_set 'CASES World feed' 'Feeds from all other the world proposed by CASES Luxembourg.'
+$ heroku run python src/manager.py add_feed 'CSO online' 'CSO online' https://www.csoonline.com/index.rss en 2
 ```
 
 
