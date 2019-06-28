@@ -42,11 +42,9 @@ $ heroku run python src/manager.py add_feed_set 'CASES feed' 'Feeds proposed by 
 $ heroku run python src/manager.py add_feed CIRCL 'CIRCL News feed' https://www.circl.lu/rss.xml en 1
 $ heroku run python src/manager.py add_feed 'BEE Secure' 'Bee Secure feed' https://www.bee-secure.lu/de/rss/news de 1
 
-
 $ heroku run python src/manager.py add_feed_set 'CASES World feed' 'Feeds from all other the world proposed by CASES Luxembourg.'
 $ heroku run python src/manager.py add_feed 'CSO online' 'CSO online' https://www.csoonline.com/index.rss en 2
 ```
-
 
 
 ## License
