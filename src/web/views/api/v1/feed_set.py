@@ -18,6 +18,7 @@ feed_set_fields = {
     'title': fields.String,
     'description': fields.String,
     'feeds': fields.List(fields.Nested(feed_fields)),
+    'ui_position': fields.Integer,
 }
 
 def make_public_feed(feed):

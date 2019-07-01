@@ -5,10 +5,11 @@ from bootstrap import application, db
 from web.models import Feed, FeedSet
 
 
-def add_feed_set(title, description):
+def add_feed_set(title, description, ui_position):
     """Add a new feed set.
     """
-    new_feed_set = FeedSet(title=title, description=description)
+    new_feed_set = FeedSet(title=title, description=description,
+                            ui_position=int(ui_position))
     db.session.add(new_feed_set)
     db.session.commit()
 

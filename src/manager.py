@@ -67,11 +67,11 @@ def add_spam(number, category):
 
 
 @manager.command
-def add_feed_set(title, description):
+def add_feed_set(title, description, ui_position):
     "Add a new feed set."
     print("Adding a new feed set in the database....")
     with application.app_context():
-        scripts.add_feed_set(title, description)
+        scripts.add_feed_set(title, description, ui_position)
 
 
 @manager.command

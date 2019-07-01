@@ -27,6 +27,7 @@ class FeedSet(db.Model):
     title = db.Column(db.String(), default="")
     description = db.Column(db.String(), default="")
     date_created = db.Column(db.DateTime(), default=datetime.utcnow())
+    ui_position = db.Column(db.Integer(), default=0)
 
     # relationships
     feeds = db.relationship(Feed, backref='set', cascade='all, delete-orphan',
