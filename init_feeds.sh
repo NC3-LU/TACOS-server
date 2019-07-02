@@ -18,5 +18,6 @@ python src/manager.py add_feed 'Cybersecurity & Digital Privacy Policy (Unit H.2
 
 # Feed set: CASES feed
 python src/manager.py add_feed_set 'CASES news' 'News about CASES' 3
-python src/manager.py add_feed 'CASES tools' 'CASES tools' https://open-source-security-software.net/organization/CASES/releases.atom en 3
+#python src/manager.py add_feed 'CASES tools' 'CASES tools' https://open-source-security-software.net/organization/CASES/releases.atom en 3
+python src/manager.py add_feed 'CASES.LU' 'Articles from the CASES website' https://cases.lu/feed.xml en 3
 python src/manager.py add_feed 'MONARC news' 'News about MONARC' https://www.monarc.lu/feeds/all.atom.xml en 3
