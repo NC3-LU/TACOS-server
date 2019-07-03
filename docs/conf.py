@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Server'
-copyright = '2019, CASES Luxembourg, Cedric Bonhomme'
-author = 'CASES Luxembourg, Cedric Bonhomme'
+project = 'tacos-server'
+copyright = '2019, CASES Luxembourg, Cédric Bonhomme'
+author = 'CASES Luxembourg, Cédric Bonhomme'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'

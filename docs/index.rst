@@ -3,32 +3,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+
 Presentation
 ============
 
+This application provides back-end services to TACOS.
+
+
+Deployment
+==========
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
 
-Services
-========
-
-This sections describes the services provided by the back-end.
-
-Spam
-----
-SpamListAPI
-~~~~~~~~~~~
-
-.. code-block:: bash
-
-    $ curl /api/vi/spams
-    {"nb_results": 187, "objects": [{"number": "+xxxxxxxx", "category": "Financial fraud", "created": "Wed, 19 Jun 2019 09:15:55 -0000"}]}
+    deployment
 
 
-Indices and tables
-==================
+Back-end services
+=================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+    :maxdepth: 2
+
+    services
