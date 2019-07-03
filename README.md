@@ -2,39 +2,15 @@
 
 ## Presentation
 
+This application provides back-end services to TACOS.
 
-## Installation
-
-```bash
-$ git clone https://github.com/CASES-LU/{APP_NAME}-server.git
-$ cd {APP_NAME}-server/
-$ pipenv install
-$ pipenv shell
-$ python src/manager.py db_create
-$ python src/manager.py db_init
-$ python src/manager.py retrieve_spam_from_misp
-$ python src/runserver.py
-```
-
-### Deploy on Heroku
+A [documentation](./docs) is available. To generate the documentation:
 
 ```bash
-$ heroku create --region eu tacos-backend
-$ heroku addons:add heroku-postgresql:hobby-dev
-$ heroku config:set APPLICATION_SETTINGS='heroku.cfg'
-$ git push heroku master
-$ heroku run init
-$ heroku ps:scale web=1
+$ pipx install sphinx
+$ cd docs/
+$ make html
 ```
-
-#### Retrieving data from MISP
-
-```bash
-$ heroku config:set MISP_URL=<MISP-instance-URL>
-$ heroku config:set MISP_KEY=<MISP-token>
-$ heroku run python src/manager.py retrieve_spam_from_misp
-```
-
 
 ## License
 
