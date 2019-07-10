@@ -40,6 +40,10 @@ def internal_server_error(error):
 def handle_sqlalchemy_assertion_error(error):
     return error.args[0], 400
 
+@current_app.route('/', methods=['GET'])
+def index():
+    """index page."""
+    return render_template('privacy.html')
 
 @current_app.route('/privacy', methods=['GET'])
 def privacy():
