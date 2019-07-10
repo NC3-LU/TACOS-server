@@ -1,5 +1,5 @@
 # Team
 
 Cedric Bonhomme - cedricbonhomme.org
-Jérome Lonbardi - https://github.com/jerolomb
+Jerome Lonbardi - https://github.com/jerolomb
 Juan Rocha - https://github.com/jfrocha

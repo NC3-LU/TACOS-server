@@ -9,6 +9,14 @@
     "addons": [
         "heroku-postgresql:hobby-dev"
     ],
+    "buildpacks": [
+       {
+           "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+       },
+       {
+           "url": "heroku/python"
+       }
+   ],
     "env": {
         "APPLICATION_SETTINGS": {
             "description": "Configuration file for Heroku",
@@ -17,4 +25,3 @@
         },
     }
 }
- 
