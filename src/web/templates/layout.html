@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TACOS back-end services" />
+    <link rel="author" type="text/plain"  href="{{ url_for('human')  }}" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" />
+    {% block head_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='npm_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='npm_components/bootstrap-select/dist/css/bootstrap-select.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='npm_components/@fortawesome/fontawesome-free/css/all.min.css') }}">
+    {% endblock %}
+    <script src="{{ url_for('static', filename='npm_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='npm_components/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='npm_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='npm_components/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+    <title>TACOS back-end services</title>
+    {% endblock %}
+</head>
+{% block page_body %}
+<body>
+    {% block main_menu %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-MOSP-blue">
+            <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" width="120px" alt="TACOS back-end services" title="TACOS back-end services" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% block menu_links %}
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('privacy') }}" title="Schemas">{{ _('Privacy policy') }}</a>
+                    </li>
+                </ul>
+            </div>
+            {% endblock %}
+        </nav>
+    {% endblock %}
+<div class="container alert-message">
+{% block messages %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <br />
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+</div>
+<br />
+{% block content %}{% endblock %}
+<br />
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('privacy') }}">{{ _('Privacy policy') }}</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+{% endblock %}
+</html>

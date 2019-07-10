@@ -1,0 +1,20 @@
+{
+    "name": "TACOS-server",
+    "version": "0.0.1",
+    "description": "TACOS back-end services.",
+    "scripts": {
+        "postinstall": "cd src/web/static/ ; ln -sf ../../../node_modules npm_components"
+    },
+    "author": "Cédric Bonhomme",
+    "license": "AGPL-3.0-or-later",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.7.2",
+        "bootstrap": "^4.2.1",
+        "bootstrap-select": "^1.13.5",
+        "jquery": "^3.3.1",
+        "popper.js": "^1.14.6"
+    },
+    "engines": {
+        "npm": "6.1.0"
+    }
+}
