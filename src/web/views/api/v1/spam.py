@@ -3,7 +3,7 @@
 
 import re
 import hashlib
-from flask import jsonify, abort
+from flask import jsonify
 from sqlalchemy import desc
 from flask_restful import (Resource, reqparse, fields, marshal, abort)
 
