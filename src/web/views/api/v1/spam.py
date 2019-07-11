@@ -1,11 +1,14 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import jsonify
+import re
+import hashlib
+from flask import jsonify, abort
 from sqlalchemy import desc
 from flask_restful import (Resource, reqparse, fields, marshal, abort)
 
 from web.models import Spam
+from bootstrap import db
 
 spam_fields = {
     'uuid': fields.String,
@@ -47,6 +50,36 @@ class SpamListAPI(Resource):
             'nb_results': q.count(),
             'objects': [make_public_spam(spam) for spam in q.all()]
         }
+
+    def post(self):
+        args = self.reqparse.parse_args()
+        number_hash = args['number_hash']
+        if not number_hash:
+            # number_hash is mandatory
+            abort(400)
+        try:
+            # check if number_hash is a SHA 512 string
+            re.match(r'^\w{128}$', number_hash).group(0)
+        except:
+            abort(400)
+        number = args['number'] if args['number'] else ''
+        if number:
+            # if the 'number' was submitted in clear, we check if its hashed
+            # value is equal to the hashed value submitted by the client
+            h = hashlib.sha512()
+            h.update(number.encode('utf-8'))
+            if not number == h.hexdigest():
+                abort(400)
+        category = args['category'] if args['category'] else 'Other'
+        source = args['source'] if args['source'] else 'TACOS'
+
+        new_spam = Spam(number = args['number'],
+                    number_hash=number_hash,
+                    category=category,
+                    source=source)
+
+        db.session.add(new_spam)
+        db.session.commit()
 
 
 class SpamAPI(Resource):
