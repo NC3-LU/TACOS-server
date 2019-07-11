@@ -86,6 +86,8 @@ class SpamListAPI(Resource):
         db.session.add(new_spam)
         db.session.commit()
 
+        return jsonify({'spam': make_public_spam(new_spam, spam_fields)})
+
 
 class SpamAPI(Resource):
     def get(self, id):
