@@ -40,6 +40,8 @@ class SpamListAPI(Resource):
         super(SpamListAPI, self).__init__()
 
     def get(self):
+        """Return the list of spam reports.
+        """
         args = self.reqparse.parse_args()
         q = Spam.query.order_by(desc(Spam.date))
         for attr, value in args.items():
@@ -52,6 +54,8 @@ class SpamListAPI(Resource):
         }
 
     def post(self):
+        """Endpoint for the creation of new spam report.
+        """
         args = self.reqparse.parse_args()
         number_hash = args['number_hash']
         if not number_hash:
@@ -84,6 +88,8 @@ class SpamListAPI(Resource):
 
 class SpamAPI(Resource):
     def get(self, id):
+        """Returns more details about a spam report.
+        """
         spam = Spam.query.filter(Spam.id==id).first()
         if not spam:
             return abort(404, message='Spam {} does not exist.'.format(id))
