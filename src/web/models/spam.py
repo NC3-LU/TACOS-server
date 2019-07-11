@@ -16,7 +16,7 @@ class Spam(db.Model):
     number_hash = db.Column(db.Text(), nullable=True)
     category = db.Column(db.Text(), nullable=False)
     source =  db.Column(db.Text(), nullable=False)
-    date = db.Column(db.DateTime(), default=datetime.utcnow())
+    date = db.Column(db.DateTime(), default=datetime.utcnow)
 
     def __str__(self):
         return """UUID: {}
