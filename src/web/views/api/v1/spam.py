@@ -25,10 +25,10 @@ spam_fields_light = {
     'date': fields.DateTime
 }
 
-def make_public_spam(spam):
+def make_public_spam(spam, filters):
     """Convert the internal representation of a spam to
     the external representation that clients expected."""
-    return marshal(spam, spam_fields_light)
+    return marshal(spam, filters)
 
 
 class SpamListAPI(Resource):
@@ -50,7 +50,8 @@ class SpamListAPI(Resource):
 
         return {
             'nb_results': q.count(),
-            'objects': [make_public_spam(spam) for spam in q.all()]
+            'objects': [make_public_spam(spam, spam_fields_light)
+                                                        for spam in q.all()]
         }
 
     def post(self):
@@ -93,4 +94,4 @@ class SpamAPI(Resource):
         spam = Spam.query.filter(Spam.id==id).first()
         if not spam:
             return abort(404, message='Spam {} does not exist.'.format(id))
-        return jsonify({'spam': make_public_spam(spam)})
+        return jsonify({'spam': make_public_spam(spam, spam_fields)})
