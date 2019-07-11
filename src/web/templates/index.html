@@ -2,22 +2,22 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col">
-            <p class="lead">🌮 TACOS - TrustApp Cases for Obvious Security 🌮</p>
+        <div class="col text-center">
+            <h3>🌮 TACOS - TrustApp Cases for Obvious Security 🌮</h3>
         </div>
     </div>
-    <br /><br /><br />
+    <br /><br />
     <div class="row">
-        <div class="col-md-6">
-            <h4>{{ _('Download the application for Android') }}</h4>
+        <div class="col-md-6 text-center">
+            <h5>{{ _('Download the application for Android') }}</h5>
             <div class="text-center">
                 <a href="https://play.google.com/store/apps/details?id=lu.cases.tacos&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
                     <img class="img-fluid" alt="Get it on Google Play" src="{{ url_for('static', filename='img/en_badge_web_generic.png') }}" width="250px" />
                 </a>
             </div>
         </div>
-        <div class="col-md-6">
-            <h4>{{ _('Download the application for iOS') }}</h4>
+        <div class="col-md-6 text-center">
+            <h5>{{ _('Download the application for iOS') }}</h5>
             <div class="text-center">
                 <a href="#">
                     <img class="img-fluid" alt="Get it on Apple Store" src="{{ url_for('static', filename='img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg') }}" width="250px" />
@@ -25,10 +25,27 @@
             </div>
         </div>
     </div>
-    <br /><br /><br />
-    <div class="row">t
-        <div class="col">
-            <p class="lead">[TODO: Some screen shots]</p>
+    <br /><br /><br /><br /><br />
+    <div class="row">
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/home.png') }}" />
+        </div>
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/menu.png') }}" />
+        </div>
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/games.png') }}" />
+        </div>
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/password-card.png') }}" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/spam-list.png') }}" />
+        </div>
+        <div class="col-md-3">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/spam-report.png') }}" />
         </div>
     </div>
 </div><!-- /.container -->
