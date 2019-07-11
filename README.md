@@ -4,7 +4,8 @@
 
 This application provides back-end services to TACOS.
 
-A [documentation](./docs) is available. To generate the documentation:
+A [documentation](https://tacos-server.readthedocs.io) is available.  
+If you want to generate it yourself:
 
 ```bash
 $ pipx install sphinx
