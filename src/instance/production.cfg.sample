@@ -9,7 +9,7 @@ DB_CONFIG_DICT = {
     'host': 'localhost',
     'port': 5432
 }
-DATABASE_NAME = 'companion_dev'
+DATABASE_NAME = 'tacos'
 SQLALCHEMY_DATABASE_URI = 'postgres://{user}:{password}@{host}:{port}/{name}'.format(name=DATABASE_NAME, **DB_CONFIG_DICT)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_POOL_SIZE = 15
@@ -20,7 +20,7 @@ SECURITY_PASSWORD_SALT = 'L8gTsyrpRQEF8jNWQPyvRfv7U5kJkD'
 
 CHECK_VERSION = True
 
-LOG_PATH = './var/log/companion_dev.log'
+LOG_PATH = './var/log/tacos.log'
 LOG_LEVEL = 'info'
 
 UPLOAD_FOLDER = './src/web/public/pictures/'
