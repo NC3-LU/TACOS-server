@@ -4,7 +4,7 @@
     {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TACOS back-end services" />
+    <meta name="description" content="TACOS by CASES.LU" />
     <link rel="author" type="text/plain"  href="{{ url_for('human')  }}" />
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}" />
     <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
@@ -19,7 +19,7 @@
     <script src="{{ url_for('static', filename='npm_components/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='npm_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='npm_components/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-    <title>TACOS back-end services</title>
+    <title>TACOS by CASES.LU</title>
     {% endblock %}
 </head>
 {% block page_body %}
@@ -27,7 +27,7 @@
     {% block main_menu %}
         <nav class="navbar navbar-expand-lg navbar-dark bg-MOSP-blue">
             <a class="navbar-brand" href="/">TACOS</a>
-            <!-- <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" width="120px" alt="TACOS back-end services" title="TACOS back-end services" /></a> -->
+            <!-- <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" width="120px" alt="TACOS by CASES.LU" title="TACOS by CASES.LU" /></a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -70,8 +70,8 @@
                 <a href="https://www.cases.lu">CASES.LU</a>
                 &nbsp;&nbsp;
                 <a href="{{ url_for('privacy') }}">{{ _('Privacy policy') }}</a>
-		 &nbsp;&nbsp;
-		<a href="https://github.com/CASES-LU/server">Source code</a>
+                &nbsp;&nbsp;
+                <a href="https://github.com/CASES-LU/TACOS-server">Source code</a>
             </div>
         </div>
     </div>
