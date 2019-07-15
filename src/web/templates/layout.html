@@ -25,25 +25,31 @@
 {% block page_body %}
 <body>
     {% block main_menu %}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-MOSP-blue">
-            <a class="navbar-brand" href="/">TACOS</a>
-            <!-- <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" width="120px" alt="TACOS by CASES.LU" title="TACOS by CASES.LU" /></a> -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-md navbar-dark bg-MOSP-blue">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo-web-cases.lu-white.png') }}" alt="TACOS by CASES.LU" title="TACOS by CASES.LU" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto text-center" href="#"><em>TACOS</em> <br />📱 🌮 TrustApp Cases for Obvious Security 🌮 📱</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {% block menu_links %}
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://tacos-server.readthedocs.io">{{ _('Documentation') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('privacy') }}">{{ _('Privacy policy') }}</a>
-                    </li>
-                </ul>
-            </div>
-            {% endblock %}
-        </nav>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://tacos-server.readthedocs.io">{{ _('Documentation') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('privacy') }}">{{ _('Privacy policy') }}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     {% endblock %}
 <div class="container alert-message">
 {% block messages %}
