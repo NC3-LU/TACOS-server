@@ -2,12 +2,18 @@
 {% block content %}
 <div class="container">
     <div class="row">
+        <div class="col-4 mx-auto d-block text-center">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/tacos-logo.png') }}" />
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
-            <p class="lead">TACOS is the mobile application by <a href="https://www.cases.lu">CASES.LU</a>
+            <br />
+            <p class="lead text-justify">TACOS is the mobile application by <a href="https://www.cases.lu">CASES.LU</a>
             and stands for <em>TrustApp Cases for Obvious Security</em>.</p>
-            <p class="lead">TACOS provides a spam detection feature. It allows you to check for spam phone
+            <p class="lead text-justify">TACOS provides a spam detection feature. It allows you to check for spam phone
             numbers. You can also contribute to our database by reporting spam phone numbers.</p>
-            <p class="lead">Besides that, TACOS is also an awareness application for cybersecurity.
+            <p class="lead text-justify">Besides that, TACOS is also an awareness application for cybersecurity.
             We included a password cards generator, some security and privacy awareness games.</p>
         </div>
     </div>
@@ -45,7 +51,7 @@
                 <li class="list-group-item">Detect and report spam phone numbers</li>
                 <li class="list-group-item">Generate and manage password cards</li>
                 <li class="list-group-item">Security and privacy awareness games</li>
-                <li class="list-group-item">Tips and Tricks</li>
+                <li class="list-group-item">Security Tips and Tricks</li>
                 <li class="list-group-item">Security news curated by the CASES team</li>
             </ul>
         </div>

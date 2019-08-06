@@ -26,15 +26,19 @@
 <body>
     {% block main_menu %}
     <nav class="navbar navbar-expand-md navbar-dark bg-MOSP-blue">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo-web-cases.lu-white.png') }}" height="90px" alt="TACOS by CASES.LU" title="TACOS by CASES.LU" /></a>
+                    <a class="navbar-brand" href="/">
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/logo-web-cases.lu-white.png') }}"
+                            alt="TACOS by CASES.LU - Cyberworld Awareness and Security Enhancements Services"
+                            title="TACOS by CASES.LU - Cyberworld Awareness and Security Enhancements Services" />
+                    </a>
                 </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto text-center" href="#">TACOS</a>
+            <a class="navbar-brand mx-auto text-center text-bold" href="#"><span class="mb-0 h1">TACOS</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
