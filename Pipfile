@@ -15,5 +15,3 @@ pymisp = "*"
 phonenumbers = "*"
 flask-babel = "*"
 
-[requires]
-python_version = "3.6"
