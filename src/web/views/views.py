@@ -40,10 +40,18 @@ def internal_server_error(error):
 def handle_sqlalchemy_assertion_error(error):
     return error.args[0], 400
 
+
 @current_app.route('/', methods=['GET'])
 def index():
     """index page."""
     return render_template('index.html')
+
+
+@current_app.route('/documentation', methods=['GET'])
+def documentation():
+    """Documentation page."""
+    return redirect('https://tacos-server.readthedocs.io', code=308)
+
 
 @current_app.route('/privacy', methods=['GET'])
 def privacy():
