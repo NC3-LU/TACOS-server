@@ -73,7 +73,7 @@ class SpamListAPI(Resource):
             # value is equal to the hashed value submitted by the client
             h = hashlib.sha512()
             h.update(number.encode('utf-8'))
-            if not number == h.hexdigest():
+            if not number_hash == h.hexdigest():
                 abort(400)
         category = args['category'] if args['category'] else 'Other'
         source = args['source'] if args['source'] else 'TACOS'
