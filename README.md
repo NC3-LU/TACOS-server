@@ -4,7 +4,7 @@
 
 This application provides back-end services to TACOS.
 
-A [documentation](https://tacos-server.readthedocs.io) is available.  
+A [documentation](https://tacos.cases.lu/documentation) is available.
 If you want to generate it yourself:
 
 ```bash
