@@ -76,6 +76,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="ios-tab" data-toggle="tab" href="#ios" role="tab" aria-controls="ios" aria-selected="false">iOS</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="dark-tab" data-toggle="tab" href="#dark" role="tab" aria-controls="dark" aria-selected="false">Dark theme</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -83,28 +86,80 @@
       <div class="tab-pane fade show active" id="android" role="tabpanel" aria-labelledby="android-tab">
           <div class="row">
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/home.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/home.png') }}" />
               </div>
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/menu.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/menu.png') }}" />
               </div>
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/games.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/games.png') }}" />
               </div>
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/password-card.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/password-card.png') }}" />
               </div>
           </div>
           <div class="row">
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/spam-list.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/spam-list.png') }}" />
               </div>
               <div class="col-md-3">
-                  <img class="img-fluid" src="{{ url_for('static', filename='img/spam-report.png') }}" />
+                  <img class="img-fluid" src="{{ url_for('static', filename='img/android/spam-report.png') }}" />
               </div>
           </div>
       </div>
       <div class="tab-pane fade" id="ios" role="tabpanel" aria-labelledby="ios-tab">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/home.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/tips&tricks.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/games.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/passwordCcard.png') }}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/spam.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/news.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/settings.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/ios/about.png') }}" />
+            </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="dark" role="tabpanel" aria-labelledby="dark-tab">
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/home.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/tips&tricks.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/games.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/passwordCcard.png') }}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/spam.png') }}" />
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ url_for('static', filename='img/dark/news.png') }}" />
+            </div>
+        </div>
       </div>
     </div>
 
