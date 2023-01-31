@@ -18,7 +18,7 @@ SQLALCHEMY_MAX_OVERFLOW = 0
 LOG_PATH = './var/log/tacos.log'
 LOG_LEVEL = 'info'
 
-ADMIN_EMAIL = 'info@cases.lu'
+ADMIN_EMAIL = 'info@nc3.lu'
 
 MAIL_SERVER = 'localhost'
 MAIL_PORT = 25

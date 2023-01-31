@@ -2,10 +2,10 @@
     "name": "TACOS-server",
     "description": "TACOS back-end services.",
     "keywords": [
-        "CASES"
+        "NC3"
     ],
-    "website": "https://github.com/CASES-LU/server",
-    "repository": "https://github.com/CASES-LU/server",
+    "website": "https://github.com/NC3-LU/server",
+    "repository": "https://github.com/NC3-LU/server",
     "addons": [
         "heroku-postgresql:hobby-dev"
     ],
