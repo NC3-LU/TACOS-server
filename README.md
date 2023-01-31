@@ -4,14 +4,6 @@
 
 This application provides back-end services to TACOS.
 
-A [documentation](https://tacos.cases.lu/documentation) is available.
-If you want to generate it yourself:
-
-```bash
-$ pipx install sphinx
-$ cd docs/
-$ make html
-```
 
 ## License
 
@@ -20,7 +12,7 @@ This software is licensed under
 
 
 * Copyright (C) 2019 Cédric Bonhomme
-* Copyright (C) 2019 SMILE gie securitymadein.lu
+* Copyright (C) 2019 NC3 Luxembourg
 
 For more information, the [list of authors and contributors](AUTHORS.md) is
 available.

@@ -3,7 +3,7 @@ Installation
 
 .. code-block:: bash
 
-    $ git clone https://github.com/CASES-LU/tacos-server.git
+    $ git clone https://github.com/NC3-LU/tacos-server.git
     $ cd tacos-server/
     $ pipenv install
     $ pipenv shell
@@ -43,7 +43,7 @@ Configuring some source of news
 .. code-block:: bash
 
     # Creation of a set of feeds
-    python src/manager.py add_feed_set 'Luxembourg Greater Region' 'Feeds proposed by CASES Luxembourg.' 1
+    python src/manager.py add_feed_set 'Luxembourg Greater Region' 'Feeds proposed by NC3 Luxembourg.' 1
     # Adding some news to the newly created set
     python src/manager.py add_feed 'BEE Secure' 'Bee Secure feed' https://www.bee-secure.lu/de/rss/news de 1
     python src/manager.py add_feed 'Silicon Luxembourg' 'Silicon Luxembourg' https://www.siliconluxembourg.lu/tag/cybersecurity/feed/ en 1

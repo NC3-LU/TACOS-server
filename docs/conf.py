@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'tacos-server'
-copyright = '2019, CASES Luxembourg'
-author = 'CASES Luxembourg'
+copyright = '2019, NC3 Luxembourg'
+author = 'NC3 Luxembourg'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'

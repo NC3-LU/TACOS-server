@@ -2,7 +2,7 @@
 Presentation
 ============
 
-This application provides back-end services to `TACOS <https://tacos.cases.lu>`_.
+This application provides back-end services to `TACOS <https://tacos.nc3.lu>`_.
 
 
 Deployment

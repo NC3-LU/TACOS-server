@@ -50,7 +50,7 @@ def index():
 @current_app.route('/documentation', methods=['GET'])
 def documentation():
     """Documentation page."""
-    return redirect('https://tacos-server.readthedocs.io', code=308)
+    return redirect('https://github.com/NC3-LU/TACOS-server/tree/master/docs', code=308)
 
 
 @current_app.route('/privacy', methods=['GET'])
