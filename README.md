@@ -2,7 +2,8 @@
 
 ## Presentation
 
-This application provides back-end services to TACOS.
+This application provides back-end services to
+[TACOS](https://github.com/NC3-LU/TACOS).
 
 
 ## License
